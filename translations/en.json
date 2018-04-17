@@ -1,8 +1,8 @@
 {
   "app": {
     "name": "App Store & Google Play Reviews",
-    "short_description": "App Store & Google Play Reviews and Reply to Reviews via Zendesk by AppFollow",
+    "short_description": "Integrate reviews from the App Store and Google Play into your Zendesk Support account",
     "long_description": "Reply to reviews in App Store and Google Play from one place with ease. Keep the history of all the changes. Powered by AppFollow.io.",
-    "installation_instructions": "Install the app, setup a channel integration, enter email and an app link, connect with iTunes Connect (for iOS and Mac apps) or Google Play Console (for Android apps). PROFIT."
+    "installation_instructions": "Install the app, setup a channel integration, enter your email and an app link, connect with iTunes Connect (for iOS apps) or Google Play Console (for Android apps). PROFIT."
   }
 }
