@@ -1,0 +1,7 @@
+{
+  "channel_integrations": {
+    "AppFollow": {
+      "manifest_url": "https://dev-as.appfollow.io/zendesk-app/manifest"
+    }
+  }
+}
