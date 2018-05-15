@@ -1,49 +1,29 @@
-$(function() {
+$(function () {
 	var client = ZAFClient.init();
 	client.invoke('resize', { width: '100%', height: '120px' });
 	client.get('ticket.requester.id').then(
-	function(data) {
-		var user_id = data['ticket.requester.id'];
+		function (data) {
+			var user_id = data['ticket.requester.id'];
 			requestUserInfo(client, user_id);
-
-			console.log(client);
-	});
-
-	client.get('ticket').then(function(data) {
-		console.log(data);
-		// showInfo(data);
-	});
-
-	client.on('ticket.save', function() {
-		var isLongText = client.get('ticket.comment.text').then(function(data) {
-			return data['ticket.comment.text'] && (data['ticket.comment.text'].length > 350);
 		});
 
-		if (isLongText) {
-			client.invoke(
-				'notify',
-				'Ответы на обзоры в Google Play могут содержать не больше 350 символов',
-				'error',
-				{sticky: true},
-			);
-		}
-
-		return !isLongText;
+	client.get('ticket').then(function (data) {
+		// showInfo(data);
 	});
 });
 
 function requestUserInfo(client, id) {
 	var settings = {
 		url: '/api/v2/users/' + id + '.json',
-		type:'GET',
+		type: 'GET',
 		dataType: 'json',
 	};
 
 	client.request(settings).then(
-		function(data) {
+		function (data) {
 			// showInfo(data);
 		},
-		function(response) {
+		function (response) {
 			showError(response);
 		}
 	);
